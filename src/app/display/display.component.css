@@ -1,0 +1,40 @@
+.wrapper {
+  margin-top: -25px;
+}
+
+.card-img-top {
+  background-color: whitesmoke;
+}
+
+.card-body {
+  background-color: white;
+}
+
+.card-title {
+  color: rgb(28, 28, 162);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0 0.5rem;
+  width: 200px;
+}
+
+@media all and (min-width: 700px) {
+  .card {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media all and (min-width: 1441px) {
+  .card {
+    max-width: 50vw;
+  }
+
+  .card {
+    justify-content: space-between;
+  }
+}

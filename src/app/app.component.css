@@ -1,0 +1,20 @@
+@media all and (min-width: 1441px) {
+  .container {
+    margin-left: 0px;
+    display: flex;
+  }
+}
+
+@media all and (min-width: 700px) {
+  .container {
+    margin-left: 0px;
+  }
+}
+
+.filter {
+  margin-right: 50px;
+}
+
+.wrapper {
+  background-color: whitesmoke;
+}

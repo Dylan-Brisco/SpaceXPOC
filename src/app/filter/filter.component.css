@@ -1,0 +1,48 @@
+.filter-button-container {
+  width: 250px;
+  align-items: center;
+  background-color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+.filter-button-container h4 {
+  text-align: left;
+}
+
+.button-active {
+  color: white;
+  border-color: #28a745;
+  border-radius: 8px;
+  background-color: green;
+  display: inline;
+  width: 30%;
+  margin: 15px;
+}
+
+.btn-default {
+  color: black;
+  border-color: #28a745;
+  background-color: hsl(120, 60%, 80%);
+  width: 30%;
+  margin: 15px;
+  align-items: left;
+  display: inline;
+}
+
+.btn-success {
+  color: black;
+  border-color: #28a745;
+  background-color: green;
+  width: 30%;
+  margin: 15px;
+  align-items: left;
+  display: inline-block;
+}
+
+.btn-default:hover {
+  background-color: darkgreen;
+  border-color: black;
+  color: white;
+  transition: 0.3s;
+}
