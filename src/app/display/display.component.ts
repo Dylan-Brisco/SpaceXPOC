@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FilterService } from '../filter/filter-service';
 
 @Component({
@@ -7,6 +7,7 @@ import { FilterService } from '../filter/filter-service';
   styleUrls: ['./display.component.css'],
 })
 export class DisplayComponent implements OnInit {
+  @Input() currentLaunches: any;
   constructor(public filterService: FilterService) {}
 
   ngOnInit(): void {}

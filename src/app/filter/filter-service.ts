@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { Observable } from 'rxjs';
+import { Launch } from './launch.model';
 
 @Injectable({
   providedIn: 'root',
@@ -23,99 +24,62 @@ export class FilterService {
 
   currentLaunches: any = [];
 
-  async filterYear(year: number) {
+  filterYear(year: number): Observable<Launch[]> {
     this.baseUrl = this.baseUrl.replace(
       this.yearFilterBaseText + this.currentYear,
       ''
     );
     if (this.yearFilterApplied && this.currentYear === year) {
       this.yearFilterApplied = false;
-      this.fetchOnNewFilter(this.baseUrl);
       this.currentYear = 0;
     } else {
       this.yearFilterApplied = true;
       this.baseUrl = this.baseUrl + this.yearFilterBaseText + year;
-      this.fetchOnNewFilter(this.baseUrl);
       this.currentYear = year;
     }
-    return this.currentLaunches;
+    return this.http.get<Launch[]>(this.baseUrl);
   }
-  async filterSuccessfulLaunch(bool: boolean) {
-    console.log('filter success launch');
-
+  filterSuccessfulLaunch(bool: boolean): Observable<Launch[]> {
     this.baseUrl = this.baseUrl.replace(
       this.launchFilterBaseText + this.currentLaunchFilter,
       ''
     );
-    console.log('After replace ' + this.baseUrl);
     if (this.launchFilterApplied && this.currentLaunchFilter === bool) {
-      console.log('in launch if');
       this.launchFilterApplied = false;
-      this.fetchOnNewFilter(this.baseUrl);
     } else {
-      console.log('in launch else');
       this.launchFilterApplied = true;
       this.baseUrl = this.baseUrl + this.launchFilterBaseText + bool;
       this.currentLaunchFilter = bool;
-      this.fetchOnNewFilter(this.baseUrl);
     }
-    return this.currentLaunches;
+    return this.http.get<Launch[]>(this.baseUrl);
   }
-  async filterSuccessfulLanding(bool: boolean) {
+  filterSuccessfulLanding(bool: boolean): Observable<Launch[]> {
     this.baseUrl = this.baseUrl.replace(
       this.landingFilterBaseText + this.currentLandingFilter,
       ''
     );
     if (this.landingFilterApplied && this.currentLandingFilter === bool) {
       this.landingFilterApplied = false;
-      this.fetchOnNewFilter(this.baseUrl);
     } else {
       this.landingFilterApplied = true;
       this.baseUrl = this.baseUrl + this.landingFilterBaseText + bool;
       this.currentLandingFilter = bool;
-      this.fetchOnNewFilter(this.baseUrl);
     }
-    return this.currentLaunches;
+    return this.http.get<Launch[]>(this.baseUrl);
   }
 
   getCurrentUrl(): string {
     return this.baseUrl;
   }
 
-  fetchOnNewFilter(url: string) {
+  fetchOnNewFilter(url: string): Observable<Launch[]> {
     console.log('current url is ' + url);
-    this.http
-      .get(url)
-      .pipe(
-        map((launches: any) => {
-          const launchArray = [];
-          for (const key in launches) {
-            if (launches.hasOwnProperty(key)) {
-              launchArray.push({ ...launches[key], id: key });
-            }
-          }
-          this.currentLaunches = launchArray;
-        })
-      )
-      .subscribe((data) => {
-        console.log(this.currentLaunches);
-      });
+    return this.http.get<Launch[]>(url);
   }
 
-  async firstFetch(url: string) {
+  firstFetch(url: string) {
     console.log('current url is ' + url);
-    this.http.get(url).pipe(
-      map((launches: any) => {
-        const launchArray = [];
-        for (const key in launches) {
-          if (launches.hasOwnProperty(key)) {
-            launchArray.push({ ...launches[key], id: key });
-          }
-        }
-        this.currentLaunches = launchArray;
-      })
-    );
-    return this.currentLaunches();
+    return this.http.get<Launch[]>(url);
   }
 
   getLaunches(): any[] {

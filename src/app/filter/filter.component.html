@@ -1,83 +1,85 @@
-<div class="filter-button-container">
-    <h4>Filters</h4>
-    <p>Launch Year</p>
-    <hr>
-    <!-- <ng-container *ngFor="let item of [].constructor(14); let i = index">
-                <button [ngClass]="currentYear===(i+2006) ? 'btn btn-success' : 'btn btn-default'" type="button"
-                    (click)="filterYear(i+2006)">{{i+2006}}</button>
-                <br>
-            </ng-container> -->
-    <button [ngClass]="currentYear===2006 ? 'btn btn-success' : 'btn btn-default'" type="button"
-        (click)="filterYear(2006)">
-        2006
-    </button>
-    <button [ngClass]="currentYear===2007 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2007)"> 2007
-    </button>
-    <br>
-    <button [ngClass]="currentYear===2008 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2008)"> 2008
-    </button>
-    <button [ngClass]="currentYear===2009 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2009)"> 2009
-    </button>
-    <br>
-    <button [ngClass]="currentYear===2010 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2010)"> 2010
-    </button>
-    <button [ngClass]="currentYear===2011 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2011)"> 2011
-    </button>
-    <br>
-    <button [ngClass]="currentYear===2012 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2012)"> 2012
-    </button>
-    <button [ngClass]="currentYear===2013 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2013)"> 2013
-    </button>
-    <br>
-    <button [ngClass]="currentYear===2014 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2014)"> 2014
-    </button>
-    <button [ngClass]="currentYear===2015 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2015)"> 2015
-    </button>
-    <br>
-    <button [ngClass]="currentYear===2016 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2016)"> 2016
-    </button>
-    <button [ngClass]="currentYear===2017 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2017)"> 2017
-    </button>
-    <br>
-    <button [ngClass]="currentYear===2018 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2018)"> 2018
-    </button>
-    <button [ngClass]="currentYear===2019 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2019)"> 2019
-    </button>
-    <br>
-    <button [ngClass]="currentYear===2020 ? 'btn btn-success' :'btn btn-default'" type="button"
-        (click)="filterYear(2020)"> 2020
-    </button>
+<div class="container">
+    <div class="filter-button-container">
+        <h4>Filters</h4>
+        <p>Launch Year</p>
+        <hr>
+        <button [ngClass]="currentYear===2006 ? 'btn btn-success' : 'btn btn-default'" type="button"
+            (click)="filterYear(2006)">
+            2006
+        </button>
+        <button [ngClass]="currentYear===2007 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2007)"> 2007
+        </button>
+        <br>
+        <button [ngClass]="currentYear===2008 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2008)"> 2008
+        </button>
+        <button [ngClass]="currentYear===2009 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2009)"> 2009
+        </button>
+        <br>
+        <button [ngClass]="currentYear===2010 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2010)"> 2010
+        </button>
+        <button [ngClass]="currentYear===2011 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2011)"> 2011
+        </button>
+        <br>
+        <button [ngClass]="currentYear===2012 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2012)"> 2012
+        </button>
+        <button [ngClass]="currentYear===2013 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2013)"> 2013
+        </button>
+        <br>
+        <button [ngClass]="currentYear===2014 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2014)"> 2014
+        </button>
+        <button [ngClass]="currentYear===2015 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2015)"> 2015
+        </button>
+        <br>
+        <button [ngClass]="currentYear===2016 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2016)"> 2016
+        </button>
+        <button [ngClass]="currentYear===2017 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2017)"> 2017
+        </button>
+        <br>
+        <button [ngClass]="currentYear===2018 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2018)"> 2018
+        </button>
+        <button [ngClass]="currentYear===2019 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2019)"> 2019
+        </button>
+        <br>
+        <button [ngClass]="currentYear===2020 ? 'btn btn-success' :'btn btn-default'" type="button"
+            (click)="filterYear(2020)"> 2020
+        </button>
 
-    <p> Successful Launch </p>
-    <hr>
-    <div class=".filter-button-container ">
-        <button [ngClass]="currentLaunchFilter && launchFilterApplied ? 'btn btn-success': 'btn btn-default'"
-            value="true" type="button" (click)="filterSuccessfulLaunch(true)">True</button>
-        <button [ngClass]="!currentLaunchFilter && launchFilterApplied ? 'btn btn-success': 'btn btn-default'"
-            value="true" type="button" value="false" type="button"
-            (click)="filterSuccessfulLaunch(false)">False</button>
-    </div>
-    <div>
-        <p>Successful Landing</p>
+        <p> Successful Launch </p>
         <hr>
         <div class=".filter-button-container ">
-            <button [ngClass]="currentLandingFilter && landingFilterApplied ? 'btn btn-success': 'btn btn-default'"
-                value="true" type="button" (click)="filterSuccessfulLanding(true)">True</button>
-            <button [ngClass]="!currentLandingFilter && landingFilterApplied ? 'btn btn-success': 'btn btn-default'"
-                value="false" type="button" (click)="filterSuccessfulLanding(false)">False</button>
+            <button [ngClass]="currentLaunchFilter && launchFilterApplied ? 'btn btn-success': 'btn btn-default'"
+                value="true" type="button" (click)="filterSuccessfulLaunch(true)">True</button>
+            <button [ngClass]="!currentLaunchFilter && launchFilterApplied ? 'btn btn-success': 'btn btn-default'"
+                value="true" type="button" value="false" type="button"
+                (click)="filterSuccessfulLaunch(false)">False</button>
+        </div>
+        <div>
+            <p>Successful Landing</p>
+            <hr>
+            <div class=".filter-button-container ">
+                <button [ngClass]="currentLandingFilter && landingFilterApplied ? 'btn btn-success': 'btn btn-default'"
+                    value="true" type="button" (click)="filterSuccessfulLanding(true)">True</button>
+                <button [ngClass]="!currentLandingFilter && landingFilterApplied ? 'btn btn-success': 'btn btn-default'"
+                    value="false" type="button" (click)="filterSuccessfulLanding(false)">False</button>
+            </div>
         </div>
     </div>
+
+    <div>
+        <app-display [currentLaunches]=currentLaunches></app-display>
+    </div>
+
 </div>

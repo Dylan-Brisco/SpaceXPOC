@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="row">
-        <div *ngFor="let launch of filterService.currentLaunches" class="col-2 card mb-4 mt-4">
+        <div *ngFor="let launch of currentLaunches" class="col-2 card mb-4 mt-4">
             <img [src]=" launch.links?.mission_patch_small" class="card-img-top" alt="Flight Patch" />
             <div class="card-body">
                 <h5 class="card-title"> {{launch.mission_name + ' #' +

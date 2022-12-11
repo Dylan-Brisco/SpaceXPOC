@@ -15,23 +15,31 @@ export class FilterComponent implements OnInit {
   landingFilterApplied: boolean = false;
   yearFilterApplied: boolean = false;
 
-  constructor(public filterService: FilterService) {}
+  constructor(private filterService: FilterService) {}
 
-  async ngOnInit() {
-    await this.filterService.fetchOnNewFilter(this.filterService.baseUrl);
+  ngOnInit() {
+    this.filterService
+      .fetchOnNewFilter(this.filterService.baseUrl)
+      .subscribe((launches) => (this.currentLaunches = launches));
   }
-  async filterYear(year: number) {
-    await this.filterService.filterYear(year);
+  filterYear(year: number) {
+    this.filterService
+      .filterYear(year)
+      .subscribe((launches) => (this.currentLaunches = launches));
     this.changeStatus();
   }
 
-  async filterSuccessfulLaunch(bool: boolean) {
-    await this.filterService.filterSuccessfulLaunch(bool);
+  filterSuccessfulLaunch(bool: boolean) {
+    this.filterService
+      .filterSuccessfulLaunch(bool)
+      .subscribe((launches) => (this.currentLaunches = launches));
     this.changeStatus();
   }
 
-  async filterSuccessfulLanding(bool: boolean) {
-    await this.filterService.filterSuccessfulLanding(bool);
+  filterSuccessfulLanding(bool: boolean) {
+    this.filterService
+      .filterSuccessfulLanding(bool)
+      .subscribe((launches) => (this.currentLaunches = launches));
     this.changeStatus();
   }
 

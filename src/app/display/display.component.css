@@ -1,5 +1,6 @@
 .wrapper {
   margin-top: -25px;
+  display: inline;
 }
 
 .card-img-top {
