@@ -14,13 +14,22 @@ export class FilterComponent implements OnInit {
   currentLandingFilter: boolean = false;
   landingFilterApplied: boolean = false;
   yearFilterApplied: boolean = false;
+  years: number[] = [];
 
   constructor(private filterService: FilterService) {}
 
   ngOnInit() {
     this.filterService
       .fetchOnNewFilter(this.filterService.baseUrl)
-      .subscribe((launches) => (this.currentLaunches = launches));
+      .subscribe((launches) => {
+        this.currentLaunches = launches;
+        let maxYear: string =
+          this.currentLaunches[this.currentLaunches.length - 1].launch_year;
+        console.log('max year ' + maxYear);
+        for (let i = 2006; i < Number(maxYear); i++) {
+          this.years.push(i);
+        }
+      });
   }
   filterYear(year: number) {
     this.filterService

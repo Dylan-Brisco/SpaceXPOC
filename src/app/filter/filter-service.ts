@@ -77,15 +77,6 @@ export class FilterService {
     return this.http.get<Launch[]>(url);
   }
 
-  firstFetch(url: string) {
-    console.log('current url is ' + url);
-    return this.http.get<Launch[]>(url);
-  }
-
-  getLaunches(): any[] {
-    return this.currentLaunches;
-  }
-
   getLandingFilterApplied(): boolean {
     return this.landingFilterApplied;
   }
