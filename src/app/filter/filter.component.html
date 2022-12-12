@@ -1,37 +1,44 @@
 <div class="container">
-    <div class="filter-button-container">
-        <h4>Filters</h4>
-        <p>Launch Year</p>
-        <hr>
+    <h1>SpaceX Launch Program</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="filter-button-container">
+                    <h4>Filters</h4>
+                    <p>Launch Year</p>
+                    <hr>
+                    <button *ngFor="let year of years"
+                        [ngClass]="currentYear === year ? 'btn btn-success' : 'btn btn-default'" type="button"
+                        (click)="filterYear(year)"> {{year}}</button>
 
-        <div *ngFor="let year of years">
-            <button [ngClass]="currentYear === year ? 'btn btn-success' : 'btn btn-default'" type="button"
-                (click)="filterYear(year)"> {{year}}</button>
-        </div>
+                    <p>Successful Launch</p>
+                    <hr>
 
-        <p> Successful Launch </p>
-        <hr>
-        <div class=".filter-button-container ">
-            <button [ngClass]="currentLaunchFilter && launchFilterApplied ? 'btn btn-success': 'btn btn-default'"
-                value="true" type="button" (click)="filterSuccessfulLaunch(true)">True</button>
-            <button [ngClass]="!currentLaunchFilter && launchFilterApplied ? 'btn btn-success': 'btn btn-default'"
-                value="true" type="button" value="false" type="button"
-                (click)="filterSuccessfulLaunch(false)">False</button>
+                    <button
+                        [ngClass]="(currentLaunchFilter && launchFilterApplied) ? 'btn btn-success': 'btn btn-default'"
+                        value="true" type="button" (click)="filterSuccessfulLaunch(true)">True</button>
+                    <button
+                        [ngClass]="(!currentLaunchFilter && launchFilterApplied) ? 'btn btn-success': 'btn btn-default'"
+                        value="true" type="button" value="false" type="button"
+                        (click)="filterSuccessfulLaunch(false)">False</button>
+
+
+                    <p>Successful Landing</p>
+                    <hr>
+
+                    <button
+                        [ngClass]="(currentLandingFilter && landingFilterApplied) ? 'btn btn-success': 'btn btn-default'"
+                        value="true" type="button" (click)="filterSuccessfulLanding(true)">True</button>
+                    <button
+                        [ngClass]="(!currentLandingFilter && landingFilterApplied) ? 'btn btn-success': 'btn btn-default'"
+                        value="false" type="button" (click)="filterSuccessfulLanding(false)">False</button>
+                </div>
+            </div>
         </div>
-        <div>
-            <p>Successful Landing</p>
-            <hr>
-            <div class=".filter-button-container ">
-                <button [ngClass]="currentLandingFilter && landingFilterApplied ? 'btn btn-success': 'btn btn-default'"
-                    value="true" type="button" (click)="filterSuccessfulLanding(true)">True</button>
-                <button [ngClass]="!currentLandingFilter && landingFilterApplied ? 'btn btn-success': 'btn btn-default'"
-                    value="false" type="button" (click)="filterSuccessfulLanding(false)">False</button>
+        <div class="col-md-9">
+            <div class="col-launch">
+                <app-display [currentLaunches]=currentLaunches></app-display>
             </div>
         </div>
     </div>
-
-    <div>
-        <app-display [currentLaunches]=currentLaunches></app-display>
-    </div>
-
 </div>

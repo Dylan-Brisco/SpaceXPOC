@@ -1,41 +1,45 @@
-.wrapper {
-  margin-top: -25px;
-  display: inline;
-}
-
 .card-img-top {
   background-color: whitesmoke;
+  padding: 10px;
 }
 
 .card-body {
   background-color: white;
+  padding: 10px;
 }
 
 .card-title {
   color: rgb(28, 28, 162);
 }
 
+@media (max-width: 700px) {
+  .xs {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .card {
   display: flex;
   flex-direction: column;
   padding: 20px;
   margin: 0 0.5rem;
-  width: 200px;
 }
 
-@media all and (min-width: 700px) {
-  .card {
-    flex-direction: row;
-    flex-wrap: wrap;
+@media (min-width: 0) and (max-width: 700px) {
+  .sm {
   }
 }
 
-@media all and (min-width: 1441px) {
-  .card {
-    max-width: 50vw;
+@media (min-width: 700) and (max-width: 1023) {
+  .md {
   }
+}
+@media (min-width: 1024) and (max-width: 1399) {
+  .lg {
+  }
+}
 
-  .card {
-    justify-content: space-between;
+@media (min-width: 1400px) {
+  .xl {
   }
 }
